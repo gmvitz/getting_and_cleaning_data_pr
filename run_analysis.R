@@ -1,12 +1,12 @@
 library(tidyverse)
 
 # Load and rename variables
-definitions <- read.table("data/UCI HAR Dataset/features.txt")
-activities <- read.table("data/UCI HAR Dataset/activity_labels.txt")
+definitions <- read.table("UCI HAR Dataset/features.txt")
+activities <- read.table("UCI HAR Dataset/activity_labels.txt")
 
-test_data <- read.table("data/UCI HAR Dataset/test/X_test.txt")
-test_label <- read.table("data/UCI HAR Dataset/test/Y_test.txt")
-test_sub <- read.table("data/UCI HAR Dataset/test/subject_test.txt")
+test_data <- read.table("UCI HAR Dataset/test/X_test.txt")
+test_label <- read.table("UCI HAR Dataset/test/Y_test.txt")
+test_sub <- read.table("UCI HAR Dataset/test/subject_test.txt")
 
 colnames(test_sub) <- "subject"
 colnames(test_label) <- "activity"
@@ -14,9 +14,9 @@ colnames(test_data) <- definitions$V2
 
 test <- cbind(test_sub, test_label, test_data)
 
-train_data <- read.table("data/UCI HAR Dataset/train/X_train.txt")
-train_label <- read.table("data/UCI HAR Dataset/train/Y_train.txt")
-train_sub <- read.table("data/UCI HAR Dataset/train/subject_train.txt")
+train_data <- read.table("UCI HAR Dataset/train/X_train.txt")
+train_label <- read.table("UCI HAR Dataset/train/Y_train.txt")
+train_sub <- read.table("UCI HAR Dataset/train/subject_train.txt")
 
 colnames(train_sub) <- "subject"
 colnames(train_label) <- "activity"
